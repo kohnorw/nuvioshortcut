@@ -291,3 +291,5 @@ that stray from the simple case:
 
 Self-hosted and single-purpose: it talks to your own Nuvio account and the
 addons you installed there. It hosts no content and ships no addons.
+
+# Fully Coded with Claude AI
