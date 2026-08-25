@@ -21,8 +21,6 @@ VLC; VLC does the playing.
 - Docker and Docker Compose (or Node.js 20+ to run it directly)
 - An existing Nuvio account with addons installed
 - VLC for iOS on the phone
-- At least one addon that returns direct HTTP links — see
-  [Limitations](#limitations)
 
 ---
 
@@ -174,19 +172,6 @@ episode.
 Records expire after `PLAYLIST_TTL_HOURS` and are encrypted at rest, because
 resolved debrid URLs are worth protecting.
 
-### The iOS Shortcut
-
-Generate a personal shortcut URL in **Settings → Generate shortcut URL**.
-Regenerating invalidates the previous one. Then build a two-action shortcut:
-
-1. **Get Contents of URL** — the URL from Settings, with `q` set to the title
-2. **Open URLs** — pass it the result
-
-The endpoint searches your addons, picks the best direct stream, and returns a
-`vlc-x-callback://` URL as plain text. Put a **Text** action with *Ask Each
-Time* in front to make it prompt. Add `&format=json` for
-`{ title, stream, source, vlc }` if you want the shortcut to name what it found.
-
 ### What is not tracked
 
 Playing something writes nothing to your account — no Continue Watching entry,
@@ -197,17 +182,6 @@ anything written would be a guess.
 The one exception is explicit: **Add to Library** on a title's page, which
 calls `sync_push_library_items`. It saves the show, not the episode, and shows
 up in the native app like any other library entry.
-
----
-
-## Fonts
-
-The UI is designed to match the native app, which uses JetBrains Sans. The font
-files are **not bundled** — the copy in the Nuvio repo carries an "All rights
-reserved" notice with no license grant. Run `scripts/fetch-fonts.sh` once to
-pull the three weights from the public repo, then rebuild. Skip it and the app
-falls back to the system font; everything works, it just isn't a typographic
-match.
 
 ---
 
