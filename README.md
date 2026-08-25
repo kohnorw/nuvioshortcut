@@ -30,7 +30,6 @@ VLC; VLC does the playing.
 
 ```bash
 cp .env.example .env          # set PUBLIC_URL to the address your phone uses
-./scripts/fetch-fonts.sh      # optional, see Fonts
 docker compose up -d --build
 ```
 
