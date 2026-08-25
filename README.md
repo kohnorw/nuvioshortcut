@@ -14,6 +14,8 @@ to re-sign.
 It is a **hand-off tool, not a player**. It finds the stream and passes it to
 VLC; VLC does the playing.
 
+**Claude Coded with using https://github.com/NuvioMedia/NuvioMobile as a reference!**
+
 ---
 
 ## Requirements
